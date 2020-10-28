@@ -20,6 +20,4 @@ public String result(@RequestParam("number")String number,Model model) {
 	return "output.html";
 }
 
-
-
 }
