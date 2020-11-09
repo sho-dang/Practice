@@ -11,7 +11,7 @@ public class ShainForm {
 
 
 	public String getNumber() {
-		return number;
+		return this.number;
 	}
 
 	public void setNumber(String number) {

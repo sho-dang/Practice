@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ShainController {
 
 @ModelAttribute
-public ShainForm ShainForm() {
+public ShainForm setUpForm() {
 	return new ShainForm();
 }
 
@@ -27,7 +27,11 @@ public String result(@Validated ShainForm shainForm,BindingResult bindingResult,
 
 
 	String number = shainForm.getNumber();
-	String name = "コントローラー太郎";
+	ShainService shainService = new ShainServiceImpl();
+	String name = shainService.findByNo(number);
+
+
+	//String name = "コントローラー太郎";
 	model.addAttribute("number", number);
 	model.addAttribute("name",name);
 	return "output.html";
